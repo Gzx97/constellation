@@ -1,5 +1,5 @@
 import Taro from '@tarojs/taro'
-import getBaseUrl from './httpConfig'
+import getBaseUrl from './baseUrl'
 import interceptors from './interceptors'
   
 interceptors.forEach(interceptorItem => Taro.addInterceptor(interceptorItem))

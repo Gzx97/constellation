@@ -2,22 +2,12 @@ import { Component } from 'react'
 import { View, Text, Image } from '@tarojs/components'
 import { AtToast } from 'taro-ui'
 import Taro from '@tarojs/taro'
+import getBaseUrl from '../../api/baseUrl'
 
-import BAIYANG from '../../image/login/baiyang.png'
-import JINNIU from '../../image/login/jinniu.png'
-import SHUANGZI from '../../image/login/shuangzi.png'
-import JUXIE from '../../image/login/juxie.png'
-import SHIZI from '../../image/login/shizi.png'
-import CHUNU from '../../image/login/chunv.png'
-import TIANCENG from '../../image/login/tiancheng.png'
-import TIANXIE from '../../image/login/tianxie.png'
-import SHESHOU from '../../image/login/sheshou.png'
-import MOJIE from '../../image/login/mojie.png'
-import SHUIPING from '../../image/login/shuiping.png'
-import SHUANGYU from '../../image/login/shuangyu.png'
 import "taro-ui/dist/style/components/button.scss" // 按需引入
-import './login.scss'
 
+import './login.scss'
+const IMG_URL = getBaseUrl()+'images/starLuckey/'
 export default class Login extends Component {
   state = {
     // msg: 'Hello World!',
@@ -26,7 +16,9 @@ export default class Login extends Component {
   }
   componentWillMount() { }
 
-  componentDidMount() { }
+  componentDidMount() { 
+    console.log(IMG_URL)
+  }
 
   componentWillUnmount() { }
 
@@ -46,7 +38,9 @@ export default class Login extends Component {
   render() {
     const { toast, isOpened } = this.state
     return (
-      <View className='login'>
+      <View 
+      style={{backgroundImage:`url(${IMG_URL}star-bg.png)`}}
+      className='login'>
         <AtToast
           duration={2000}
           isOpened={isOpened}
@@ -64,7 +58,7 @@ export default class Login extends Component {
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
                 className='xz_img'
-                src={BAIYANG}
+                src={IMG_URL+'baiyang.png'}
               />
               <Text className='xz_text'>白羊座</Text>
             </View>
@@ -74,7 +68,7 @@ export default class Login extends Component {
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
                 className='xz_img'
-                src={JINNIU}
+                src={IMG_URL+'jinniu.png'}
               />
               <Text className='xz_text'>金牛座</Text>
             </View>
@@ -84,7 +78,7 @@ export default class Login extends Component {
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
                 className='xz_img'
-                src={SHUANGZI}
+                src={IMG_URL+'shuangzi.png'}
               />
               <Text className='xz_text'>双子座</Text>
             </View>
@@ -99,7 +93,7 @@ export default class Login extends Component {
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
                 className='xz_img'
-                src={JUXIE}
+                src={IMG_URL+'juxie.png'}
               />
               <Text className='xz_text'>巨蟹座</Text>
             </View>
@@ -109,7 +103,7 @@ export default class Login extends Component {
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
                 className='xz_img'
-                src={SHIZI}
+                src={IMG_URL+'shizi.png'}
               />
               <Text className='xz_text'>狮子座</Text>
             </View>
@@ -119,7 +113,7 @@ export default class Login extends Component {
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
                 className='xz_img'
-                src={CHUNU}
+                src={IMG_URL+'chunv.png'}
               />
               <Text className='xz_text'>处女座</Text>
             </View>
@@ -134,7 +128,7 @@ export default class Login extends Component {
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
                 className='xz_img'
-                src={TIANCENG}
+                src={IMG_URL+'tiancheng.png'}
               />
               <Text className='xz_text'>天秤座</Text>
             </View>
@@ -144,7 +138,7 @@ export default class Login extends Component {
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
                 className='xz_img'
-                src={TIANXIE}
+                src={IMG_URL+'tianxie.png'}
               />
               <Text className='xz_text'>天蝎座</Text>
             </View>
@@ -154,7 +148,7 @@ export default class Login extends Component {
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
                 className='xz_img'
-                src={SHESHOU}
+                src={IMG_URL+'sheshou.png'}
               />
               <Text className='xz_text'>射手座</Text>
             </View>
@@ -169,7 +163,7 @@ export default class Login extends Component {
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
                 className='xz_img'
-                src={MOJIE}
+                src={IMG_URL+'mojie.png'}
               />
               <Text className='xz_text'>摩羯座</Text>
             </View>
@@ -179,7 +173,7 @@ export default class Login extends Component {
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
                 className='xz_img'
-                src={SHUIPING}
+                src={IMG_URL+'shuiping.png'}
               />
               <Text className='xz_text'>水瓶座</Text>
             </View>
@@ -189,7 +183,7 @@ export default class Login extends Component {
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
                 className='xz_img'
-                src={SHUANGYU}
+                src={IMG_URL+'shuangyu.png'}
               />
               <Text className='xz_text'>双鱼座</Text>
             </View>
