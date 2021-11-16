@@ -2,15 +2,15 @@ import Taro from '@tarojs/taro'
 import getBaseUrl from './baseUrl'
 import interceptors from './interceptors'
   
-interceptors.forEach(interceptorItem => Taro.addInterceptor(interceptorItem))
+// interceptors.forEach(interceptorItem => Taro.addInterceptor(interceptorItem))
   
 class httpRequest {
     
   baseOptions(params, method = "GET") {
     let { url, data,param } = params;
     const BASE_URL = getBaseUrl(url);
-    // let contentType = "application/x-www-form-urlencoded";
-    let contentType = "application/json;charset=UTF-8";
+    let contentType = "application/x-www-form-urlencoded";
+    // let contentType = "application/json;charset=UTF-8";
     contentType = params.contentType || contentType;
     const option = {
       url: BASE_URL + url,  //地址
@@ -20,10 +20,11 @@ class httpRequest {
       // mode:'no-cors',
       header: {  //请求头
         'content-type': contentType,     
-        'Authorization':Taro.getStorageSync('Authorization')
+        // 'Authorization':Taro.getStorageSync('Authorization')
       }
 
     };
+    console.log('请求')
     return Taro.request(option);
   }
   
