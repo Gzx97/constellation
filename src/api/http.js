@@ -15,9 +15,9 @@ class httpRequest {
     const option = {
       url: BASE_URL + url,  //地址
       data: data,   //传参
-      method: 'get', //请求方式
+      method: method, //请求方式
       timeout:50000, // 超时时间
-      mode:'no-cors',
+      // mode:'no-cors',
       header: {  //请求头
         'content-type': contentType,     
         'Authorization':Taro.getStorageSync('Authorization')
