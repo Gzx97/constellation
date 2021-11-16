@@ -3,7 +3,7 @@ import { View, Text, Image } from '@tarojs/components'
 import { AtToast } from 'taro-ui'
 import Taro from '@tarojs/taro'
 import getBaseUrl from '../../api/baseUrl'
-
+import {getConst} from '../../api/servers'
 import "taro-ui/dist/style/components/button.scss" // 按需引入
 
 import './login.scss'
@@ -17,7 +17,8 @@ export default class Login extends Component {
   componentWillMount() { }
 
   componentDidMount() { 
-    console.log(IMG_URL)
+    // console.log(IMG_URL)
+    getConst()
   }
 
   componentWillUnmount() { }
