@@ -8,6 +8,7 @@ import "taro-ui/dist/style/components/button.scss" // 按需引入
 
 import './login.scss'
 const IMG_URL = getBaseUrl() + 'images/starLuckey/'
+
 export default class Login extends Component {
   state = {
     // msg: 'Hello World!',
@@ -18,6 +19,9 @@ export default class Login extends Component {
 
   componentDidMount() {
     // console.log(IMG_URL)
+    // getConst().then(res => {
+    //   console.log(res.data.data)
+    // })
     fortune(
       {
         cons_name: '白羊座',
@@ -43,12 +47,15 @@ export default class Login extends Component {
   componentDidHide() { }
   chooseXingzhuo = (xz) => {
     console.log(xz)
-    Taro.showToast({
-      title: xz,
-      duration: 2000, //	持续时间
-      icon: 'none',//	'success'、'loading'、'none'
-      mask: false, // 是否显示透明蒙层，防止触摸穿透
-      // image:'图片路径/图片对象'//   优先级高于icon,在icon的位置显示
+    // Taro.showToast({
+    //   title: xz,
+    //   duration: 2000, //	持续时间
+    //   icon: 'none',//	'success'、'loading'、'none'
+    //   mask: false, // 是否显示透明蒙层，防止触摸穿透
+    //   // image:'图片路径/图片对象'//   优先级高于icon,在icon的位置显示
+    // })
+    Taro.navigateTo({
+      url: '/pages/luckey/luckey?cons_name=' + encodeURI(xz) 
     })
   }
   render() {
@@ -69,7 +76,7 @@ export default class Login extends Component {
           <View className='every_3'>
 
             <View
-              onClick={() => { this.chooseXingzhuo('别点没用') }}
+              onClick={() => { this.chooseXingzhuo('白羊座') }}
               className='every_1'>
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
@@ -79,7 +86,7 @@ export default class Login extends Component {
               <Text className='xz_text'>白羊座</Text>
             </View>
             <View
-              onClick={() => { this.chooseXingzhuo('别点没用') }}
+              onClick={() => { this.chooseXingzhuo('金牛座') }}
               className='every_1'>
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
@@ -89,7 +96,7 @@ export default class Login extends Component {
               <Text className='xz_text'>金牛座</Text>
             </View>
             <View
-              onClick={() => { this.chooseXingzhuo('别点没用') }}
+              onClick={() => { this.chooseXingzhuo('双子座') }}
               className='every_1'>
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
@@ -104,7 +111,7 @@ export default class Login extends Component {
 
             <View
 
-              onClick={() => { this.chooseXingzhuo('别点没用') }}
+              onClick={() => { this.chooseXingzhuo('巨蟹座') }}
               className='every_1'>
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
@@ -114,7 +121,7 @@ export default class Login extends Component {
               <Text className='xz_text'>巨蟹座</Text>
             </View>
             <View
-              onClick={() => { this.chooseXingzhuo('别点没用') }}
+              onClick={() => { this.chooseXingzhuo('狮子座') }}
               className='every_1'>
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
@@ -124,7 +131,7 @@ export default class Login extends Component {
               <Text className='xz_text'>狮子座</Text>
             </View>
             <View
-              onClick={() => { this.chooseXingzhuo('别点没用') }}
+              onClick={() => { this.chooseXingzhuo('处女座') }}
               className='every_1'>
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
@@ -139,7 +146,7 @@ export default class Login extends Component {
 
             <View
 
-              onClick={() => { this.chooseXingzhuo('别点没用') }}
+              onClick={() => { this.chooseXingzhuo('天秤座') }}
               className='every_1'>
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
@@ -149,7 +156,7 @@ export default class Login extends Component {
               <Text className='xz_text'>天秤座</Text>
             </View>
             <View
-              onClick={() => { this.chooseXingzhuo('别点没用') }}
+              onClick={() => { this.chooseXingzhuo('天蝎座') }}
               className='every_1'>
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
@@ -159,7 +166,7 @@ export default class Login extends Component {
               <Text className='xz_text'>天蝎座</Text>
             </View>
             <View
-              onClick={() => { this.chooseXingzhuo('别点没用') }}
+              onClick={() => { this.chooseXingzhuo('射手座') }}
               className='every_1'>
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
@@ -174,7 +181,7 @@ export default class Login extends Component {
 
             <View
 
-              onClick={() => { this.chooseXingzhuo('别点没用') }}
+              onClick={() => { this.chooseXingzhuo('摩羯座') }}
               className='every_1'>
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
@@ -184,7 +191,7 @@ export default class Login extends Component {
               <Text className='xz_text'>摩羯座</Text>
             </View>
             <View
-              onClick={() => { this.chooseXingzhuo('别点没用') }}
+              onClick={() => { this.chooseXingzhuo('水瓶座') }}
               className='every_1'>
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
@@ -194,7 +201,7 @@ export default class Login extends Component {
               <Text className='xz_text'>水瓶座</Text>
             </View>
             <View
-              onClick={() => { this.chooseXingzhuo('别点没用') }}
+              onClick={() => { this.chooseXingzhuo('双鱼座') }}
               className='every_1'>
               <Image
                 // style='width: 300px;height: 100px;background: #fff;'
