@@ -24,7 +24,7 @@ class httpRequest {
       }
 
     };
-    console.log('请求')
+    // console.log('请求')
     return Taro.request(option);
   }
   

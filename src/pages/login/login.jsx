@@ -11,17 +11,15 @@ const IMG_URL = getBaseUrl() + 'images/starLuckey/'
 
 export default class Login extends Component {
   state = {
-    // msg: 'Hello World!',
-    toast: '敬请期待！',
-    isOpened: false,
+
   }
   componentWillMount() { }
 
   componentDidMount() {
     // console.log(IMG_URL)
-    // getConst().then(res => {
-    //   console.log(res.data.data)
-    // })
+    getConst().then(res => {
+      console.log(res.data.data)
+    })
     fortune(
       {
         cons_name: '白羊座',
@@ -45,6 +43,7 @@ export default class Login extends Component {
   componentDidShow() { }
 
   componentDidHide() { }
+ 
   chooseXingzhuo = (xz) => {
     console.log(xz)
     // Taro.showToast({
@@ -55,20 +54,16 @@ export default class Login extends Component {
     //   // image:'图片路径/图片对象'//   优先级高于icon,在icon的位置显示
     // })
     Taro.navigateTo({
-      url: '/pages/luckey/luckey?cons_name=' + encodeURI(xz) 
+      url: '/pages/luckey/luckey?cons_name=' + encodeURI(xz)
     })
   }
   render() {
-    const { toast, isOpened } = this.state
+    const {  } = this.state
     return (
       <View
         style={{ backgroundImage: `url(${IMG_URL}star-bg.png)` }}
         className='login'>
-        <AtToast
-          duration={2000}
-          isOpened={isOpened}
-          text={toast}
-        ></AtToast>
+
         <Text className='h1'>Hello!</Text>
         <Text className='p'>请选择您的星座~</Text>
         <View className='xz_box'>

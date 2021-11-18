@@ -1,5 +1,5 @@
 const config = {
-  projectName: 'xingzuo',
+  projectName: '星座速报',
   date: '2021-11-14',
   designWidth: 750,
   deviceRatio: {
