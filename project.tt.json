@@ -1,6 +1,6 @@
 {
   "miniprogramRoot": "./",
-  "projectname": "myApp",
+  "projectname": "星座速报",
   "description": "星座",
   "appid": "touristappid",
   "setting": {

@@ -6,10 +6,9 @@ import Taro from '@tarojs/taro'
 class App extends Component {
 
   componentDidMount () {
-    wx.showShareMenu({
-      withShareTicket: true,
-      menus: ['shareAppMessage', 'shareTimeline']
-    })
+
+  
+
   }
 
   componentDidShow () {}

@@ -9,5 +9,5 @@ export default {
     navigationBarBackgroundColor: '#12121e',
     navigationBarTitleText: 'WeChat',
     navigationBarTextStyle: 'white'
-  }
+  },
 }
