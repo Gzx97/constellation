@@ -83,7 +83,7 @@ export default class Luckey extends Component {
         {/* 页面头部返回按钮 */}
         <View className='head_icon'>
           <Image
-          style={{opacity:'0'}}
+            style={{ opacity: '0' }}
             onClick={() => {
               Taro.navigateBack({
                 delta: 1
@@ -117,14 +117,14 @@ export default class Luckey extends Component {
           <View className='xz_info_box'>
             <Image
               className='tx_img'
-              src={IMG_URL + 'baiyang-1.png'}
+              src={IMG_URL + `${cons_name}-2.png`}
             />
             <View className='box_right'>
               <View className='xz_h2'>
                 <Text>{cons_name}</Text>
               </View>
               <View className='xz_p'>
-                {constellation_sign[cons_name]||'暂无内容'}
+                {constellation_sign[cons_name] || '暂无内容'}
               </View>
             </View>
           </View>
@@ -214,6 +214,20 @@ export default class Luckey extends Component {
               </View>
               <View className='line'></View>
               {/* 具体分析 */}
+              <View className='duanluo'>
+                <View className='dl_title'>
+                  <Image
+                    onClick={() => {
+                      Taro.navigateBack({
+                        delta: 1
+                      })
+                    }}
+                    className='ys_img'
+                    src={IMG_URL + 'yunshi.png'}
+                  />
+                  <Text className='dl_h2'>运势概述:</Text>
+                </View>
+              </View>
             </View>
 
           }

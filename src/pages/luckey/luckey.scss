@@ -218,5 +218,25 @@
       }
 
     }
+
+      // 运势样式
+    .duanluo{
+    
+      .dl_title{
+        display: flex;
+        align-items: center;
+        .ys_img{
+          width: 48px;
+          height: 48px;
+        }
+        .dl_h2{
+          font-size: 28px;
+          font-weight: 500;
+          color: #735AFD;
+          line-height: 44px;
+        }
+      }
+   
+  }
   }
 }
