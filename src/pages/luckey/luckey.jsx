@@ -409,10 +409,10 @@ export default class Luckey extends Component {
                     className='ys_img'
                     src={IMG_URL + 'yunshi.png'}
                   />
-                  <Text className='dl_h2'>综合运势:</Text>
+                  <Text className='dl_h2'>{luckey_data.mima&&luckey_data.mima.info&&luckey_data.mima.info||''}</Text>
                 </View>
                 <View className='dl_p'>
-                  
+                {luckey_data.mima&&luckey_data.mima.text&&luckey_data.mima.text[0]||''}
                 </View>
               </View>
               <View className='line'></View>
@@ -425,7 +425,7 @@ export default class Luckey extends Component {
                   <Text className='dl_h2'>爱情运势:</Text>
                 </View>
                 <View className='dl_p'>
-                  {/* {luckey_data.love} */}
+                  {luckey_data.love && luckey_data.love[0] || ''}
                 </View>
               </View>
               <View className='line'></View>
@@ -439,6 +439,8 @@ export default class Luckey extends Component {
                 </View>
                 <View className='dl_p'>
                   {/* {luckey_data.work} */}
+                  {luckey_data.career && luckey_data.career[0] || ''}
+
                 </View>
               </View>
               <View className='line'></View>
@@ -451,7 +453,8 @@ export default class Luckey extends Component {
                   <Text className='dl_h2'>财富运势:</Text>
                 </View>
                 <View className='dl_p'>
-                  {/* {luckey_data.money} */}
+                  {luckey_data.finance && luckey_data.finance[0] || ''}
+
                 </View>
               </View>
               <View className='line'></View>
@@ -464,7 +467,8 @@ export default class Luckey extends Component {
                   <Text className='dl_h2'>健康运势:</Text>
                 </View>
                 <View className='dl_p'>
-                  {/* {luckey_data.health} */}
+                  {luckey_data.health && luckey_data.health[0] || ''}
+
                 </View>
               </View>
               <View className='line'></View>
