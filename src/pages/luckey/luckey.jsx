@@ -412,7 +412,7 @@ export default class Luckey extends Component {
                   <Text className='dl_h2'>综合运势:</Text>
                 </View>
                 <View className='dl_p'>
-                  {luckey_data.all}
+                  
                 </View>
               </View>
               <View className='line'></View>
@@ -425,7 +425,7 @@ export default class Luckey extends Component {
                   <Text className='dl_h2'>爱情运势:</Text>
                 </View>
                 <View className='dl_p'>
-                  {luckey_data.love}
+                  {/* {luckey_data.love} */}
                 </View>
               </View>
               <View className='line'></View>
@@ -438,7 +438,7 @@ export default class Luckey extends Component {
                   <Text className='dl_h2'>工作运势:</Text>
                 </View>
                 <View className='dl_p'>
-                  {luckey_data.work}
+                  {/* {luckey_data.work} */}
                 </View>
               </View>
               <View className='line'></View>
@@ -451,7 +451,7 @@ export default class Luckey extends Component {
                   <Text className='dl_h2'>财富运势:</Text>
                 </View>
                 <View className='dl_p'>
-                  {luckey_data.money}
+                  {/* {luckey_data.money} */}
                 </View>
               </View>
               <View className='line'></View>
@@ -464,7 +464,7 @@ export default class Luckey extends Component {
                   <Text className='dl_h2'>健康运势:</Text>
                 </View>
                 <View className='dl_p'>
-                  {luckey_data.health}
+                  {/* {luckey_data.health} */}
                 </View>
               </View>
               <View className='line'></View>

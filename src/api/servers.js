@@ -15,9 +15,10 @@ export const fortune = data => {
 /**
  * 星座配对
  *
- * @required cons_name string
- * @required type string today/tomorrow/week/month/yea
+ * @required men string
+ * @required women string
  **/
 export const pair = data => {
+  console.log(data)
   return HTTPREQUEST.post("api/star/pair", data);
 };
