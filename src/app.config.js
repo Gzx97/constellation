@@ -3,6 +3,7 @@ export default {
     'pages/login/login',
     // 'pages/index/index',
     'pages/luckey/luckey',
+    'pages/love/love',
   ],
   window: {
     backgroundTextStyle: 'light',

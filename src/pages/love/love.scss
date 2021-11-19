@@ -1,4 +1,4 @@
-.luckey {
+.love {
   background-color: #735AFD;
   // background-image: url(../../image/bg.png);
   background-repeat: no-repeat;
@@ -18,7 +18,7 @@
 
   .head_icon {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: absolute;
     top: 0;
@@ -27,6 +27,8 @@
     // height: 100px;
     padding: 48px;
     box-sizing: border-box;
+    color: white;
+    font-size: 32px;
 
     .icon_img {
       width: 50px;
@@ -38,29 +40,75 @@
   .xz_title {
     color: white;
     padding: 48px;
-
-    .xz_h1 {
-      font-size: 72px;
-    }
-
-    .xz_p {
-      font-size: 32px;
+  // 配对
+  .love_box {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    .love_one {
       display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      color: white;
 
-      .xc_tag {
+      .pd_img {
+        width: 144px;
+        height: 144px;
+      }
+
+      .xz_name {
+        margin-top: 32px;
         font-size: 24px;
-        width: 112px;
+        font-weight: 500;
+        color: #FFFFFF;
         height: 40px;
-        line-height: 40px;
-        background: linear-gradient(113deg, #735AFD 0%, #B63AF3 100%);
-        border-radius: 100px 100px 100px 100px;
-        opacity: 1;
         text-align: center;
-        margin-left: 32px;
+        background: #2C218E;
+        border-radius: 100px 100px 100px 100px;
+        padding: 5px 25px;
+        display: flex;
+        align-items: center;
+
+        .qh_img {
+          width: 25px;
+          height: 25px;
+          margin-left: 10px;
+        }
       }
     }
+
+    .love_mid {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      .ax_img {
+        width: 124px;
+        height: 124px;
+        transform:rotate(0deg);
+        animation:heartbeat 1s infinite;
+      }
+
+      @keyframes heartbeat {
+        0% {
+        transform:rotate(0deg) scale(0.8,0.8);
+        opacity:1;
+      }
+      25% {
+        transform:rotate(0deg) scale(1,1);
+        opacity:0.8;
+      }
+      100% {
+        transform:rotate(0deg) scale(0.8,0.8);
+        opacity:1;
+      }
+      }
+    }
+  }
   }
 
   // 底部
@@ -268,74 +316,6 @@
       }
     }
 
-    // 配对
-    .love_box {
-      display: flex;
-      justify-content: space-between;
-      padding: 0 20px;
-      position: relative;
-      box-sizing: border-box;
-      width: 100%;
-      .love_one {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-
-        .pd_img {
-          width: 144px;
-          height: 144px;
-        }
-
-        .xz_name {
-          margin-top: 32px;
-          font-size: 24px;
-          font-weight: 500;
-          color: #FFFFFF;
-          height: 40px;
-          text-align: center;
-          background: #2C218E;
-          border-radius: 100px 100px 100px 100px;
-          padding: 5px 25px;
-          display: flex;
-          align-items: center;
-
-          .qh_img {
-            width: 25px;
-            height: 25px;
-            margin-left: 10px;
-          }
-        }
-      }
-
-      .love_mid {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        .ax_img {
-          width: 124px;
-          height: 124px;
-          transform:rotate(0deg);
-          animation:heartbeat 1s infinite;
-        }
-
-        @keyframes heartbeat {
-          0% {
-          transform:rotate(0deg) scale(0.8,0.8);
-          opacity:1;
-        }
-        25% {
-          transform:rotate(0deg) scale(1,1);
-          opacity:0.8;
-        }
-        100% {
-          transform:rotate(0deg) scale(0.8,0.8);
-          opacity:1;
-        }
-        }
-      }
-    }
+  
   }
 }
