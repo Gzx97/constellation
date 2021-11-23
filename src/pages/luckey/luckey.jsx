@@ -37,6 +37,7 @@ export default class Luckey extends Component {
     // selector: ['白羊座', '中国', '巴西', '日本'],
     selectorCheckedMan: '狮子男',
     selectorCheckedWoman: '白羊女',
+    constellation_en:{},
   }
   componentWillMount() {
     console.log()
@@ -50,6 +51,7 @@ export default class Luckey extends Component {
       this.setState({
         constellation_sign: res.data.data.constellation_sign,
         constellation_time: res.data.data.constellation_time,
+        constellation_en:res.data.data.constellation_en
         // selector_constellation_man:res.data.data.constellation,
         // selector_constellation_woman: res.data.data.constellation,
       })
@@ -97,7 +99,7 @@ export default class Luckey extends Component {
     })
   }
   render() {
-    const { selectorCheckedWoman, selectorCheckedMan, constellation_sign, cons_name, luckey_data, type, constellation_time, selector_constellation_man, selector_constellation_woman } = this.state
+    const {constellation_en, selectorCheckedWoman, selectorCheckedMan, constellation_sign, cons_name, luckey_data, type, constellation_time, selector_constellation_man, selector_constellation_woman } = this.state
     return (
       <View
         style={{ backgroundImage: `url(${IMG_URL}star-bg.png)` }}
@@ -126,9 +128,9 @@ export default class Luckey extends Component {
         </View>
         {/* 上部透明盒子 */}
         <View className='xz_title'>
-          <View className='xz_h1'>PISCES</View>
+          <View className='xz_h1'>{constellation_en[cons_name]||'GZXNB'}</View>
           <View className='xz_p'>
-            <Text>{constellation_time[cons_name]}</Text>
+            <Text>{constellation_time[cons_name]||'XX-XX'}</Text>
             <Text className='xc_tag'>{cons_name}</Text>
           </View>
         </View>
@@ -409,10 +411,10 @@ export default class Luckey extends Component {
                     className='ys_img'
                     src={IMG_URL + 'yunshi.png'}
                   />
-                  <Text className='dl_h2'>{luckey_data.mima&&luckey_data.mima.info&&luckey_data.mima.info||''}</Text>
+                  <Text className='dl_h2'>{luckey_data.mima && luckey_data.mima.info && luckey_data.mima.info || ''}</Text>
                 </View>
                 <View className='dl_p'>
-                {luckey_data.mima&&luckey_data.mima.text&&luckey_data.mima.text[0]||''}
+                  {luckey_data.mima && luckey_data.mima.text && luckey_data.mima.text[0] || ''}
                 </View>
               </View>
               <View className='line'></View>
@@ -478,41 +480,43 @@ export default class Luckey extends Component {
           {/* 速配星座 */}
           <View className='love_box'>
             <View className='love_left love_one'>
-              <Image
-                className='pd_img'
-                src={IMG_URL + `${selectorCheckedMan.replace('男', '座')}-1.png`}
-              />
+
               <Picker mode='selector'
                 // value={}
                 range={selector_constellation_man}
                 onChange={this.onChangeMan}>
-                <Text className='xz_name picker'>
-                  {selectorCheckedMan}
+                <Image
+                  className='pd_img picker'
+                  src={IMG_URL + `${selectorCheckedMan.replace('男', '座')}-1.png`}
+                />
+                <View className='xz_name picker'>
+                  <Text>{selectorCheckedMan}</Text>
                   <Image
                     className='qh_img'
                     src={IMG_URL + 'pair-right-icon.png'}
                   />
-                </Text>
+                </View>
               </Picker>
 
 
             </View>
             <View className='love_left love_one'>
-              <Image
-                className='pd_img'
-                src={IMG_URL + `${selectorCheckedWoman.replace(/(.*)女/, '$1座')}-1.png`}
-              />
+
               <Picker mode='selector'
                 // value={}
                 range={selector_constellation_woman}
                 onChange={this.onChangeWoman}>
-                <Text className='picker xz_name'>
+                <Image
+                  className='pd_img picker'
+                  src={IMG_URL + `${selectorCheckedWoman.replace(/(.*)女/, '$1座')}-1.png`}
+                />
+                <View className='picker xz_name'>
                   {selectorCheckedWoman}
                   <Image
                     className='qh_img'
                     src={IMG_URL + 'pair-right-icon.png'}
                   />
-                </Text>
+                </View>
               </Picker>
 
             </View>

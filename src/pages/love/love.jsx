@@ -4,7 +4,7 @@ import Taro from '@tarojs/taro'
 import { Current } from '@tarojs/taro'
 import getBaseUrl from '../../api/baseUrl'
 import { getConst, pair } from '../../api/servers'
-import "taro-ui/dist/style/components/button.scss" // 按需引入
+import { AtRate } from 'taro-ui'
 import './love.scss'
 const IMG_URL = getBaseUrl() + 'images/starLuckey/'
 
@@ -47,13 +47,19 @@ export default class Love extends Component {
     })
   }
   onChangeWoman = e => {
+    let _this = this
     this.setState({
       selectorCheckedWoman: this.state.selector_constellation_woman[e.detail.value],
+    }, () => {
+      _this.pair()
     })
   }
   onChangeMan = e => {
+    let _this = this
     this.setState({
       selectorCheckedMan: this.state.selector_constellation_man[e.detail.value],
+    }, () => {
+      _this.pair()
     })
   }
   render() {
@@ -80,42 +86,44 @@ export default class Love extends Component {
           {/* 速配星座 */}
           <View className='love_box'>
             <View className='love_left love_one'>
-              <Image
-                className='pd_img'
-                src={IMG_URL + `${selectorCheckedMan.replace('男', '座')}-1.png`}
-              />
+
               <Picker mode='selector'
                 // value={}
                 range={selector_constellation_man}
                 onChange={this.onChangeMan}>
-                <Text className='xz_name picker'>
+                <Image
+                  className='pd_img picker'
+                  src={IMG_URL + `${selectorCheckedMan.replace('男', '座')}-1.png`}
+                />
+                <View className='xz_name picker'>
                   {selectorCheckedMan}
                   <Image
                     className='qh_img'
                     src={IMG_URL + 'pair-right-icon.png'}
                   />
-                </Text>
+                </View>
               </Picker>
 
 
             </View>
             <View className='love_left love_one'>
-              <Image
-                className='pd_img'
-                src={IMG_URL + `${selectorCheckedWoman.replace(/(.*)女/, '$1座')}-1.png`}
 
-              />
               <Picker mode='selector'
                 // value={}
                 range={selector_constellation_woman}
                 onChange={this.onChangeWoman}>
-                <Text className='picker xz_name'>
+                <Image
+                  className='pd_img picker'
+                  src={IMG_URL + `${selectorCheckedWoman.replace(/(.*)女/, '$1座')}-1.png`}
+
+                />
+                <View className='picker xz_name'>
                   {selectorCheckedWoman}
                   <Image
                     className='qh_img'
                     src={IMG_URL + 'pair-right-icon.png'}
                   />
-                </Text>
+                </View>
               </Picker>
 
             </View>
@@ -138,10 +146,30 @@ export default class Love extends Component {
         <View className='bot_box'>
           <View className='pd_h1'>{love_data.jieguo}</View>
           <View className='pd_span'>
-              {selectorCheckedMan}  VS  {selectorCheckedWoman}
+            {selectorCheckedMan}  VS  {selectorCheckedWoman}
           </View>
           <View className='line'></View>
-          {/* 星座运势 日 周 月 年*/}
+
+          <View className='stars_box'>
+            <View className='star_box'>
+              <Text className='star_name'>配对指数</Text>
+              <AtRate size='15' value={love_data.zhishu / 20} />
+            </View>
+            <View className='star_box'>
+              <Text className='star_name'>相悦指数</Text>
+              <AtRate size='15' value={love_data.xiangyue / 20} />
+            </View>
+            <View className='star_box'>
+              <Text className='star_name'>长久指数</Text>
+              <AtRate size='15' value={love_data.tcdj / 20} />
+            </View>
+            <View className='star_box'>
+              <Text className='star_name'>配对指数</Text>
+              <Text style={{ color: '#735AFD' }}>{love_data.bizhong}</Text>
+            </View>
+          </View>
+
+          <View className='line'></View>
 
           <View className='out_out'>
 
@@ -174,9 +202,6 @@ export default class Love extends Component {
             {/* <View className='line'></View> */}
 
           </View>
-
-
-
 
         </View>
         {/* 星座配对弹框 */}

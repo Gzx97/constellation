@@ -62,7 +62,7 @@
         }
 
         .xz_name {
-          margin-top: 32px;
+          // margin-top: 32px;
           font-size: 24px;
           font-weight: 500;
           color: #FFFFFF;
@@ -147,7 +147,23 @@
       width:280px ;
       margin: 0 auto;
     }
+// 星星盒子
+.stars_box{
+  overflow: hidden;
+  font-size: 25px;
 
+  .star_box{
+    float: left;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    .star_name{
+      font-size: 25px;
+      margin-right: 10px;
+    }
+  }
+}
     // 运势样式
     .duanluo {
 
