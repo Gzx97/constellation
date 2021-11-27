@@ -62,6 +62,15 @@ export default class Love extends Component {
       _this.pair()
     })
   }
+  search = (arr, dst) => {
+    var i = arr.length;
+    while (i -= 1) {
+      if (arr[i] == dst) {
+        return i;
+      }
+    }
+    return false;
+  }
   render() {
     const { love_data, selectorCheckedWoman, selectorCheckedMan, selector_constellation_man, selector_constellation_woman } = this.state
     return (
@@ -88,7 +97,7 @@ export default class Love extends Component {
             <View className='love_left love_one'>
 
               <Picker mode='selector'
-                // value={}
+                value={this.search(selector_constellation_man,selectorCheckedMan)}
                 range={selector_constellation_man}
                 onChange={this.onChangeMan}>
                 <Image
@@ -109,7 +118,7 @@ export default class Love extends Component {
             <View className='love_left love_one'>
 
               <Picker mode='selector'
-                // value={}
+                value={this.search(selector_constellation_woman,selectorCheckedWoman)}
                 range={selector_constellation_woman}
                 onChange={this.onChangeWoman}>
                 <Image
